@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-class BlogRollTemplate extends React.Component {
+class ArtworksRoll extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
@@ -48,14 +48,14 @@ class BlogRollTemplate extends React.Component {
                     </span>
                   </p>
                 </header>
-                <p>
+                {/* <p>
                   {post.excerpt}
                   <br />
                   <br />
                   <Link className="button" to={post.fields.slug}>
                     Keep Reading →
                   </Link>
-                </p>
+                </p> */}
               </article>
             </div>
           ))}
@@ -110,7 +110,7 @@ export default function BlogRoll() {
           }
         }
       `}
-      render={(data, count) => <BlogRollTemplate data={data} count={count} />}
+      render={(data, count) => <ArtworksRoll data={data} count={count} />}
     />
   );
 }
