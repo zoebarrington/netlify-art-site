@@ -1,42 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+// import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
-import Testimonials from "../components/Testimonials";
 import Pricing from "../components/Pricing";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
-import FullWidthImage from "../components/FullWidthImage";
 
 // eslint-disable-next-line
 export const ProductPageTemplate = ({
   image,
-  title,
-  heading,
-  description,
+  // title,
+  // heading,
+  // description,
   intro,
   main,
-  testimonials,
+  // testimonials,
   fullImage,
   pricing,
 }) => {
-  const heroImage = getImage(image) || image;
-  const fullWidthImage = getImage(fullImage) || fullImage;
+  // const heroImage = getImage(image) || image;
+  // const fullWidthImage = getImage(fullImage) || fullImage;
 
   return (
     <div className="content">
-      <FullWidthImage img={heroImage} title={title} />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
             <div className="columns">
-              <div className="column is-7 is-offset-1">
-                <h3 className="has-text-weight-semibold is-size-2">
-                  {heading}
-                </h3>
-                <p>{description}</p>
-              </div>
             </div>
             <div className="columns">
               <div className="column is-10 is-offset-1">
@@ -70,13 +61,11 @@ export const ProductPageTemplate = ({
                     </div>
                   </div>
                 </div>
-                <Testimonials testimonials={testimonials} />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <FullWidthImage img={fullWidthImage} imgPosition={"bottom"} />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -111,7 +100,7 @@ ProductPageTemplate.propTypes = {
     image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
-  testimonials: PropTypes.array,
+  // testimonials: PropTypes.array,
   fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   pricing: PropTypes.shape({
     heading: PropTypes.string,
@@ -132,7 +121,7 @@ const ProductPage = ({ data }) => {
         description={frontmatter.description}
         intro={frontmatter.intro}
         main={frontmatter.main}
-        testimonials={frontmatter.testimonials}
+        // testimonials={frontmatter.testimonials}
         fullImage={frontmatter.full_image}
         pricing={frontmatter.pricing}
       />
@@ -201,10 +190,6 @@ export const productPageQuery = graphql`
               }
             }
           }
-        }
-        testimonials {
-          author
-          quote
         }
 
         full_image {
