@@ -5,8 +5,7 @@ import Layout from "../components/Layout";
 
 // eslint-disable-next-line
 export const ProductPageTemplate = ({
-  intro,
-  main,
+  heading,
 }) => {
 
   return (
@@ -19,12 +18,11 @@ export const ProductPageTemplate = ({
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <div className="columns">
-                  {/* <div className="column is-7">
+                  <div className="column is-7">
                     <h3 className="has-text-weight-semibold is-size-3">
-                      {main.heading}
+                      {heading}
                     </h3>
-                    <p>{main.description}</p>
-                  </div> */}
+                  </div>
                 </div>
                 <div className="tile is-ancestor">
                   <div className="tile is-vertical">
