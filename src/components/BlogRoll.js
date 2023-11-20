@@ -19,6 +19,10 @@ class ArtworksRoll extends React.Component {
                 }`}
               >
                 <header>
+                <Link
+                      className="title has-text-primary is-size-4"
+                      to={post.fields.slug}
+                    >
                   {post.frontmatter.featuredimage ? (
                     <div className="featured-thumbnail">
                       <PreviewCompatibleImage
@@ -35,27 +39,15 @@ class ArtworksRoll extends React.Component {
                       />
                     </div>
                   ) : null}
-                  <p className="post-meta">
-                    <Link
+                  {/* <p className="post-meta"> */}
+                    {/* <Link
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
+                    > */}
+                      {/* {post.frontmatter.title} */}
                     </Link>
-                    <span> &bull; </span>
-                    {/* <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span> */}
-                  </p>
+                  {/* </p> */}
                 </header>
-                {/* <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p> */}
               </article>
             </div>
           ))}
