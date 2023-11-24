@@ -13,11 +13,6 @@ class BlogRollTemplate extends React.Component {
         {posts &&
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
-              {/* <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              > */}
                 <header>
                 <Link
                       className="title has-text-primary is-size-4"
@@ -39,16 +34,8 @@ class BlogRollTemplate extends React.Component {
                       />
                     </div>
                   ) : null}
-                  {/* <p className="post-meta"> */}
-                    {/* <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    > */}
-                      {/* {post.frontmatter.title} */}
                     </Link>
-                  {/* </p> */}
                 </header>
-              {/* </article> */}
             </div>
           ))}
       </div>
@@ -87,8 +74,8 @@ export default function BlogRoll() {
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 500
-                        height: 500
+                        width: 400
+                        height: 400
                         quality: 100
                         layout: CONSTRAINED
                       )
