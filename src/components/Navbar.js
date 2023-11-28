@@ -44,18 +44,6 @@ const Navbar = class extends React.Component {
               ELSPETH SPARLING
             </Link>
             </strong>
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              role="menuitem"
-              tabIndex={0}
-              onKeyPress={() => this.toggleHamburger()}
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
           </div>
           <div
             id="navMenu"
@@ -66,9 +54,6 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/about">
                 About
               </Link>
-              {/* <Link className="navbar-item" to="/products">
-                Products
-              </Link> */}
               <Link className="navbar-item" to="/contact">
                 Contact
               </Link>
