@@ -1,87 +1,87 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
-
 import Layout from "../components/Layout";
+import Content, { HTMLContent } from "../components/Content";
 
 // eslint-disable-next-line
-export const IndexPageTemplate = ({
-  mainpitch,
+export const BlogPostTemplate = ({
+  content,
+  contentComponent,
+  description,
+  title,
+  helmet,
 }) => {
+  const PostContent = contentComponent || Content;
 
   return (
-    <div>
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
-                    </div>
-                  </div>
-                  <div className="column is-12">
-                  </div>
-                </div>
-              </div>
+    <section className="section">
+      {helmet || ""}
+      <div className="container content">
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <div className="single-post-image">
+            <PostContent content={content} />
             </div>
+            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+              {title}
+            </h1>
+              <p>{description}</p>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
-IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  mainpitch: PropTypes.object,
+BlogPostTemplate.propTypes = {
+  content: PropTypes.node.isRequired,
+  contentComponent: PropTypes.func,
   description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  title: PropTypes.string,
+  helmet: PropTypes.object,
 };
 
-const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+const BlogPost = ({ data }) => {
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+      <BlogPostTemplate
+        content={post.html}
+        contentComponent={HTMLContent}
+        description={post.frontmatter.description}
+        helmet={
+          <Helmet titleTemplate="%s | Blog">
+            <title>{`${post.frontmatter.title}`}</title>
+            <meta
+              name="description"
+              content={`${post.frontmatter.description}`}
+            />
+          </Helmet>
+        }
+        title={post.frontmatter.title}
       />
     </Layout>
   );
 };
 
-IndexPage.propTypes = {
+BlogPost.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
+    markdownRemark: PropTypes.object,
   }),
 };
 
-export default IndexPage;
+export default BlogPost;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+  query BlogPostByID($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
       frontmatter {
         title
-        mainpitch {
-          title
-          description
-        }
         description
       }
     }
