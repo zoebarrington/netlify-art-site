@@ -12,7 +12,7 @@ class BlogRollTemplate extends React.Component {
       <div className="columns is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
+            <div className="is-parent column is-4" key={post.id}>
                 <header>
                 <Link
                       className="is-size-4"
@@ -74,8 +74,8 @@ export default function BlogRoll() {
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 400
-                        height: 400
+                        width: 300
+                        height: 300
                         quality: 100
                         layout: CONSTRAINED
                       )
