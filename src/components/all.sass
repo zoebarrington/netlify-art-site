@@ -14,7 +14,6 @@ $black: #2b2523
   box-shadow: none !important
   font-family: 'Futura Maxi Bold', sans-serif
 
-
   @font-face
   font-family: 'Futura Maxi Bold'
   src: url('/fonts/copyfonts.com_futuramaxicgboldopentype.woff') format('woff')
@@ -36,29 +35,6 @@ $black: #2b2523
     padding: 0 2rem 1rem 0
     margin-bottom: 1.5rem
     margin-top: 0
-
-// Helper Classes
-.full-width-image-container
-  width: 100vw
-  height: 400px
-  position: relative
-  left: 50%
-  right: 50%
-  margin: 2em -50vw
-  background-size: cover
-  background-position: bottom
-  display: flex
-  justify-content: center
-  align-items: center
-
-.full-width-image
-    width: 100vw
-    height: 400px
-    background-size: cover
-    background-position: bottom
-    display: flex
-    justify-content: center
-    align-items: center
 
 .btn
     display: inline-block
@@ -83,10 +59,6 @@ $black: #2b2523
 .navbar-item .icon
   color: $primary
 // Override for use of svg's from https://simpleicons.org/
-.icon svg
-  width: 1.5rem
-  height: 1.5rem
-  fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
 footer.footer
@@ -116,7 +88,6 @@ $menu-label-color: $white-ter
   padding: 2em
 .social a
     padding: .5em .5em .3em .5em
-    border-radius: 1em
     background-color: $white-ter
     margin: .5em
     width: 1em
@@ -137,7 +108,11 @@ $menu-label-color: $white-ter
 .single-post-image
   width: 400px
   height: 400px
+  border-radius: 0
 
+.blog-post-container
+  display: flex
+  flex-direction: row
 
 @import "~bulma"
 
