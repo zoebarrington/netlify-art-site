@@ -3,13 +3,23 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import { createGlobalStyle } from 'styled-components';
 
 // eslint-disable-next-line
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
+  const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+`;
+
   return (
     <section className="section section--gradient">
+      <GlobalStyle />
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
