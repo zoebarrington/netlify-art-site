@@ -1,32 +1,38 @@
 import * as React from "react";
-import { createGlobalStyle } from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 
 import Layout from "../components/Layout";
-import BlogRoll from "../components/BlogRoll";
+// import BlogRoll from "../components/BlogRoll";
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-  
-  body {
-    font-family: 'Montserrat', sans-serif;
-  }
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
 `;
 
 export default class BlogIndexPage extends React.Component {
-  
-  render() {
-    return (
-      <Layout>
-        <GlobalStyle/>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <BlogRoll />
-            </div>
-          </div>
-        </section>
-      </Layout>
-    );
-  }
+
+    render() {
+        return (
+            <Layout>
+                {/*//   <GlobalStyle/>*/}
+                {/*//   <section className="section">*/}
+                {/*//     <div className="container">*/}
+                {/*//       <div className="content">*/}
+                {/*//         <BlogRoll />*/}
+                {/*//       </div>*/}
+                {/*//     </div>*/}
+                {/*//   </section>*/}
+                <div className="construction-wrapper">
+                    <GlobalStyle/>
+                    <p>Elspeth Sparling website is currently under construction!</p>
+                    <p>For enquiries: please email <strong>elspethsparling@gmail.com</strong> or
+                        follow <strong><a href="https://www.instagram.com/elspethsparlingpaintings">@elspethsparlingpaintings</a></strong> on Instagram!</p>
+                </div>
+            </Layout>
+        );
+    }
 }
 
