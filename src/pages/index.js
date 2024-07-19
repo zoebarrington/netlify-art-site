@@ -16,7 +16,9 @@ export default class BlogIndexPage extends React.Component {
 
     render() {
         return (
-            <Layout>
+            <div className="construction-wrapper">
+            <div className="cat-background">
+            {/*<Layout>*/}
                 {/*//   <GlobalStyle/>*/}
                 {/*//   <section className="section">*/}
                 {/*//     <div className="container">*/}
@@ -25,13 +27,19 @@ export default class BlogIndexPage extends React.Component {
                 {/*//       </div>*/}
                 {/*//     </div>*/}
                 {/*//   </section>*/}
-                <div className="construction-wrapper">
                     <GlobalStyle/>
+                <div className="text-container">
+                    <span className="highlighted-text">
+                    <h1 className="title-header"><strong>ELSPETH SPARLING</strong></h1>
                     <p>Elspeth Sparling website is currently under construction!</p>
                     <p>For enquiries: please email <strong>elspethsparling@gmail.com</strong> or
-                        follow <strong><a href="https://www.instagram.com/elspethsparlingpaintings">@elspethsparlingpaintings</a></strong> on Instagram!</p>
+                        follow <strong><a
+                            href="https://www.instagram.com/elspethsparlingpaintings">@elspethsparlingpaintings</a></strong> on Instagram!</p>
+                    </span>
                 </div>
-            </Layout>
+                {/*</Layout>*/}
+            </div>
+            </div>
         );
     }
 }
