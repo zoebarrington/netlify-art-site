@@ -32,7 +32,7 @@ export default class BlogIndexPage extends React.Component {
                     <span className="highlighted-text">
                     <h1 className="title-header"><strong>ELSPETH SPARLING</strong></h1>
                     <p>Elspeth Sparling website is currently under construction!</p>
-                    <p>For enquiries: please email <strong>elspethsparling@gmail.com</strong> or
+                    <p>Please email <strong><a href="mailto:elspethsparling@gmail.com" class="email-link">by clicking here</a></strong> or
                         follow <strong><a
                             href="https://www.instagram.com/elspethsparlingpaintings">@elspethsparlingpaintings</a></strong> on Instagram!</p>
                     </span>
