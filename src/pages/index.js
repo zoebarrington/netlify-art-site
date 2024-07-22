@@ -30,10 +30,13 @@ export default class BlogIndexPage extends React.Component {
                     <GlobalStyle/>
                 <div className="text-container">
                     <h1 className="title-header">ELSPETH SPARLING</h1>
-                    <p>Elspeth Sparling's website is currently under construction</p>
-                    <p>For enquiries, please email <strong><a href="mailto:elspethsparling@gmail.com" class="email-link">by clicking here</a></strong> and/or
+                    <p className="website-text">Elspeth Sparling's website is currently under construction</p>
+                    <p className="mobile-text">Elspeth's website is currently under construction</p>
+                    <p>For enquiries, please email <strong><a href="mailto:elspethsparling@gmail.com"
+                                                              class="email-link">by clicking here</a></strong> and/or
                         follow <strong><a
-                            href="https://www.instagram.com/elspethsparlingpaintings">@elspethsparlingpaintings</a></strong> on Instagram!</p>
+                            href="https://www.instagram.com/elspethsparlingpaintings">@elspethsparlingpaintings</a></strong> on
+                        Instagram!</p>
                 </div>
                 {/*</Layout>*/}
             </div>

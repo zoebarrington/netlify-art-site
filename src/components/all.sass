@@ -132,6 +132,12 @@ $menu-label-color: $white-ter
   justify-content: center
   padding-top: 1%
 
+.mobile-text
+  display: none
+
+.website-text
+  display: block
+
 //.highlighted-text
 //  background-color: yellow
 //  color: black
@@ -154,9 +160,21 @@ $menu-label-color: $white-ter
   .cat-background
     padding-top: 2%
 
+  .mobile-text
+      display: block
+
+  .website-text
+    display: none
+
 @media only screen and (width: 414px) and (height: 896px)
   .cat-background
     padding-top: 14%
+
+  .mobile-text
+    display: block
+
+  .website-text
+    display: none
 
 @import "~bulma"
 
