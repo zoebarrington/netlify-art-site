@@ -29,13 +29,11 @@ export default class BlogIndexPage extends React.Component {
                 {/*//   </section>*/}
                     <GlobalStyle/>
                 <div className="text-container">
-                    <span className="highlighted-text">
-                    <h1 className="title-header"><strong>ELSPETH SPARLING</strong></h1>
-                    <p>Elspeth Sparling website is currently under construction!</p>
-                    <p>Please email <strong><a href="mailto:elspethsparling@gmail.com" class="email-link">by clicking here</a></strong> or
+                    <h1 className="title-header">ELSPETH SPARLING</h1>
+                    <p>Elspeth Sparling's website is currently under construction</p>
+                    <p>For enquiries, please email <strong><a href="mailto:elspethsparling@gmail.com" class="email-link">by clicking here</a></strong> and/or
                         follow <strong><a
                             href="https://www.instagram.com/elspethsparlingpaintings">@elspethsparlingpaintings</a></strong> on Instagram!</p>
-                    </span>
                 </div>
                 {/*</Layout>*/}
             </div>

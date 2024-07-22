@@ -119,8 +119,7 @@ $menu-label-color: $white-ter
   text-transform: uppercase
 
 .text-container
-  padding: 1%
-
+  padding: 1% 7% 1% 1%
 
 .cat-background
   background-image: url("./img/cat.jpg")
@@ -131,7 +130,7 @@ $menu-label-color: $white-ter
   background-position: center
   display: flex
   justify-content: center
-  padding-top: 7%
+  padding-top: 1%
 
 //.highlighted-text
 //  background-color: yellow
@@ -140,7 +139,24 @@ $menu-label-color: $white-ter
 //  padding: 10px
 
 .title-header
-  font-size: 20px
+ font-size: 28px
+ padding-bottom: 2%
+
+@media only screen and (max-width: 768px)
+  .title-header
+    font-size: 20px
+    padding-bottom: 1%
+
+  .text-container
+    font-size: 15px
+    padding: 1% 1% 1% 1%
+
+  .cat-background
+    padding-top: 2%
+
+@media only screen and (width: 414px) and (height: 896px)
+  .cat-background
+    padding-top: 14%
 
 @import "~bulma"
 
