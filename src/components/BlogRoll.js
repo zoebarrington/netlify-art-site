@@ -12,7 +12,7 @@ class BlogRollTemplate extends React.Component {
       <div className="columns is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-4" key={post.id}>
+            <div className="is-parent column is-5" key={post.id}>
                 <header>
                 <Link
                       className="is-size-4"

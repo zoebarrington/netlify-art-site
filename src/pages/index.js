@@ -17,6 +17,12 @@ export default class BlogIndexPage extends React.Component {
     render() {
         return (
             <Layout>
+                  <div
+          className="full-width-image-container margin-top-0"
+          style={{
+            backgroundImage: `url('/img/snowy-forrest.png')`,
+          }}
+        ></div>
                 <GlobalStyle />
                 <section className="section">
                     <div className="container">
