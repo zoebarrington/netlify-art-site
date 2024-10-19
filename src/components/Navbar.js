@@ -21,11 +21,11 @@ const Navbar = class extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: "is-active",
-            })
+            navBarActiveClass: "is-active",
+          })
           : this.setState({
-              navBarActiveClass: "",
-            });
+            navBarActiveClass: "",
+          });
       }
     );
   }
@@ -40,27 +40,25 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <strong>
-            <Link to="/" className="navbar-item" id="logo-heading" title="Logo">
-              ELSPETH SPARLING
-            </Link>
+              <Link to="/" className="navbar-item" id="logo-heading" title="Logo">
+                ELSPETH SPARLING
+              </Link>
             </strong>
           </div>
-          {/*Commented out for construction notice*/}
-          {/*<div*/}
-          {/*  id="navMenu"*/}
-          {/*  className={`navbar-menu ${this.state.navBarActiveClass}`}*/}
-          {/*>*/}
-          {/*  <div className="navbar-end has-text-centered">*/}
-          {/*  <div className="navbar-start has-text-centered">*/}
-          {/*    <Link className="navbar-item" to="/about">*/}
-          {/*      ABOUT*/}
-          {/*    </Link>*/}
-          {/*    <Link className="navbar-item" to="/contact">*/}
-          {/*      CONTACT*/}
-          {/*    </Link>*/}
-          {/*  </div>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
+          <div
+            id="navMenu"
+            className={`navbar-menu ${this.state.navBarActiveClass}`}>
+            <div className="navbar-end has-text-centered">
+              <div className="navbar-start has-text-centered">
+                <Link className="navbar-item" to="/about">
+                  ABOUT
+                </Link>
+                <Link className="navbar-item" to="/contact">
+                  CONTACT
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     );
