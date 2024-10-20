@@ -5,13 +5,13 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
-// eslint-disable-next-line
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
   title,
   helmet,
+  featuredImage,
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -20,16 +20,19 @@ export const BlogPostTemplate = ({
       {helmet || ""}
       <div className="container content">
         <div className="columns">
-          <div className="columns column is-12 is-offset-1 blog-post-container">
-            <div className="single-post-image">
-            <PostContent content={content} />
-            </div>
-            <div className="blog-post-description">
-            <h1 className="title is-size-4 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-              <p>{description}</p>
+          <div className="column is-12 is-offset-1 blog-post-container">
+            {featuredImage && (
+              <div className="single-post-image">
+                <img src={featuredImage} alt={title} />
               </div>
+            )}
+            <div className="blog-post-description">
+              <h1 className="title is-size-4 has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
+              <p>{description}</p>
+            </div>
+            <PostContent content={content} />
           </div>
         </div>
       </div>
@@ -43,6 +46,7 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  featuredImage: PropTypes.string,
 };
 
 const BlogPost = ({ data }) => {
@@ -57,13 +61,11 @@ const BlogPost = ({ data }) => {
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
+            <meta name="description" content={`${post.frontmatter.description}`} />
           </Helmet>
         }
         title={post.frontmatter.title}
+        featuredImage={post.frontmatter.featuredimage?.publicURL}  // Access publicURL
       />
     </Layout>
   );
@@ -85,6 +87,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        featuredimage {
+          publicURL
+        }
       }
     }
   }
